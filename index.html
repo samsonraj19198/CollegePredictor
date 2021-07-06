@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Predictor</title>
+
+    <!-- CSS Style Links -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Script -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">College Predictor</a>
+        <a href="#contact" class="right">Contact</a>
+        <a href="#about" class="right">About</a>
+    </div>
+    <!-- <section id="title">
+      <div class="container-fluid">
+
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="">College Predictor</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="#footer">About</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#pricing">Contact</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#cta">Download</a>
+          </li>
+      </ul>
+  </div>
+  </nav> -->
+    <div class="container">
+        <div class="row">
+            <p>Start selecting your college easy way. Select your desired branch and we will provide you with top colleges that you can join into.</p>
+        </div>
+        <div class="col-75">
+        <label for="options">Choose the basis for selection</label>
+                <select name="options" id="options" onchange="main()">
+                    <option value="branch">Based on branch</option>
+                    <option value="no-branch">Any branch</option>
+                  </select>
+        </div>
+
+        <div class="row" id="branch">
+            <div class="col-25">
+                <label for="BRANCH">Branch</label>
+            </div>
+            <div class="col-75">
+                <input type="radio" id="ECE" name="BRANCH" value="ECE">
+                <label for="ECE">ECE</label>
+                <input type="radio" id="CSE" name="BRANCH" value="CSE">
+                <label for="CSE">CSE</label>
+                <input type="radio" id="MEC" name="BRANCH" value="MEC">
+                <label for="MEC">MEC</label>
+                <input type="radio" name="BRANCH" id="INF" value="INF">
+                <label for="INF">INF</label>
+                <input type="radio" name="BRANCH" id="EEE" value="EEE">
+                <label for="EEE">EEE</label>
+                <input type="radio" name="BRANCH" id="CIV" value="CIV">
+                <label for="CIV">CIV</label>
+            </div>
+        </div>
+        <div class="row" id="caste">
+            <div class="col-25">
+                <label for="">Caste</label>
+            </div>
+            <div class="col-75">
+                <input  type="radio" name="CASTE" id="OC" value="OC">
+                <label  for="OC">OC</label>
+                <input  type="radio" name="CASTE" id="BC_A" value="BC_A">
+                <label  for="BC_A">BC-A</label>
+                <input  type="radio" name="CASTE" id="BC_B" value="BC_B">
+                <label  for="BC_B">BC-B</label>
+                <input  type="radio" name="CASTE" id="BC_C" value="BC_C">
+                <label  for="BC_C">BC-C</label>
+                <input  type="radio" name="CASTE" id="BC_D" value="BC_D">
+                <label  for="BC_D">BC-D</label>
+                <input  type="radio" name="CASTE" id="BC_E" value="BC_E">
+                <label  for="BC_E">BC-E</label>
+                <input  type="radio" name="CASTE" id="SC" value="SC">
+                <label  for="SC">SC</label>
+                <input  type="radio" name="CASTE" id="ST" value="ST">
+                <label  for="ST">ST</label>
+            </div>
+        </div>
+        <div class="row" id="gender">
+            <div class="col-25">
+                <label for="">Gender</label>
+            </div>
+            <div class="col-75">
+                <input type="radio" name="GENDER" id="BOYS" value="BOYS">
+                <label for="BOYS">Male</label>
+                <input type="radio" name="GENDER" id="GIRLS" value="GIRLS">
+                <label for="GIRLS">Female</label>
+            </div>
+        </div>
+        <div class="row" id="rank">
+            <div class="col-25">
+                <label for="RANK">Rank</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="RANK" >
+            </div>
+        </div>
+        <div class="row" id="button">
+            <button class="btn" type="button" >Submit</button>
+        </div>
+
+    </div>
+    <div class="result" style="position: relative; height: 40vh; width: 80vw; align-items: center; overflow: auto;" >
+
+        <table id="mytable" >
+
+        </table>
+        <canvas id="myChart" width="200px" height="200px"></canvas>
+    </div>
+
+   <script src="index.js"></script>
+</body>
+</html>
